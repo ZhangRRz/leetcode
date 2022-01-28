@@ -1,2 +1,2 @@
 # leetcode
-leetcode answer
+leetcode solution

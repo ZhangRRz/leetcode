@@ -13,7 +13,7 @@ public:
                     island_num++;
                     process_grid(i,j, grid);
                 }
-            }
+            } 
         }
         return island_num;
     }

@@ -1,5 +1,5 @@
 /*
-the same coding ideal with leecode Q1094
+the same coding ideal with leecode Q1091
 */
 class Solution {
 public:

@@ -21,8 +21,7 @@ public:
             realans.push_back(temppath);
         
         // if nownode can reach any node
-        else if( graph[nownode].size() > 0 )
-            
+        else
             //use for loop to recursive call all the node that nownodecan reach
             for(int i = 0; i < graph[nownode].size() ;i++)
                 findpath( graph[nownode][i], graph,realans,temppath);

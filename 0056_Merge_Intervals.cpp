@@ -10,11 +10,8 @@ public:
         for(int i = 1; i < intervals.size() ; i++){
             
             // if overlap
-            if(ans.back()[1] >= intervals[i][0] && ans.back()[0] <= intervals[i][1]){
-                // cout <<intervals[i][0]  <<"  ------  "<<ans.back()[0] <<endl;
-                ans.back()[0] = min(ans.back()[0], intervals[i][0]);
+            if(ans.back()[1] >= intervals[i][0])
                 ans.back()[1] = max(ans.back()[1], intervals[i][1]);
-            }
             else{
                 tmp = {intervals[i][0],intervals[i][1]};
                 ans.push_back(tmp);

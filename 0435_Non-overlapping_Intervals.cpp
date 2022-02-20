@@ -1,4 +1,4 @@
-
+/*
 1. sort by ending.
 2 . keep track of previous end
 3. if the next start > previous end, remove element

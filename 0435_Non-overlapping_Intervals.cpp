@@ -40,6 +40,6 @@ public:
 				prev = i;
 		}
         
-		return erase;
+		return erase; 
 	}
 };

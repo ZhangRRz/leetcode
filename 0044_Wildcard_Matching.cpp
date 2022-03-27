@@ -14,7 +14,7 @@ public:
                 return false;
         }
         
-        // if have '*' ,we cant torrent mismatch
+        // if have '*' ,we can torrent mismatch
         bool fault_torrent = false;
         
         //=============================

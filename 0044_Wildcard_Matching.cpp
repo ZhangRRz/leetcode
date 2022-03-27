@@ -14,18 +14,19 @@ public:
                 return false;
         }
         
-        // if have '*' ,we can torrent mismatch
-        bool fault_torrent = false;
+        // if have '*' ,we cant tolerant mismatch
+        bool fault_tolerant = false;
         
         //=============================
         // use split, store all the part of pattern in p_vec
         // and indicate p[0] is '*' or not '*'
+        // str_split is function that is written below
         //=============================
         vector<string> p_vec;
         str_split(p_vec,p);
         
         if(p[0] == '*')
-            fault_torrent = true;
+            fault_tolerant = true;
         
         //=============================
         // start the pattern matching;
@@ -41,7 +42,7 @@ public:
                     return false;
                 
                 if(p_vec[j][k] != s[k+i] && p_vec[j][k] != '?'){
-                    if(!fault_torrent){
+                    if(!fault_tolerant){
                         return false;
                     }
                     else{
@@ -56,14 +57,14 @@ public:
             // let i increase to p_vec[j].length()-1 ,-1 beacause we have i++ in for loop
             // j++ means we start match next pattern in p_vec
             //=============================
-            // why turn on fault_torrent?
+            // why turn on fault_tolerant?
             // remember,we split pattern if see '*'
             // so if go to next pattern ,means is must have '*' before the pattern 
             //=============================
             if(match){
                 i += p_vec[j].length()-1;
                 j++;
-                fault_torrent = true;
+                fault_tolerant = true;
             }
             // if not match ,just do nothing
             
@@ -106,9 +107,7 @@ public:
             return true;
             
         }
-        //=============================
         // all the other are false
-        //=============================
         else
             return false;
         

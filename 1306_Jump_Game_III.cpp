@@ -20,7 +20,7 @@ public:
         if(next < arr.size() && !visited[next])
             ans = ans || dfs(arr, visited, next);
         
-        return ans;
+        return ans; 
         
     }
 };
